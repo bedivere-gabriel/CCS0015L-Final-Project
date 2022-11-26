@@ -19,6 +19,7 @@ public:
 	CustomerRent() {
 		head = NULL;
 	}
+
 	void insert(int _ID, string _name, string _address, int _videoID) {
 		node* newNode, * nodePtr;
 
