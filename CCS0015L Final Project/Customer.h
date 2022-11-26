@@ -19,5 +19,5 @@ public:
 	void showCustomerDetails();
 	void displayAllCustomer();
 	int generateID();
-	bool checkCustomerID();
+	bool checkCustomerID(int ID);
 };

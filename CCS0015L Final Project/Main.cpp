@@ -12,6 +12,9 @@ void customerMaintenanceMenu();
 
 
 int main(int argc, char* argv[]) {
+
+	//VideoDataStructure videoObj;
+
 	//CustomerDataStructure customerObj;
 
 	//customerObj.addCustomer(x, "John", "Bulacan");
