@@ -6,7 +6,7 @@
 class VideoDataStructure {
 protected:
 	struct node {
-		int _id, _copies;
+		int _id, _copie;
 		std::string _title, _genre, _production, _filename;
 		node* next;
 	};

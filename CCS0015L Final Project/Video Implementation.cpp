@@ -4,10 +4,7 @@
 #include <iomanip>
 #include <cstdlib>
 
-
 using namespace std; 
-
-int rand(); //add dis in video header file lmao i need to check how to use dis
 
 VideoDataStructure::VideoDataStructure()
 {
