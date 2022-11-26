@@ -8,7 +8,18 @@ using namespace std;
 void mainMenu();
 void customerMaintenanceMenu();
 
+
+
+
 int main(int argc, char* argv[]) {
+	//CustomerDataStructure customerObj;
+
+	//customerObj.addCustomer(x, "John", "Bulacan");
+	//customerObj.addCustomer(x, "Gab", "Manila");
+	//customerObj.addCustomer(x, "Harv", "Manila Bay");
+	//
+	//20220003 ... 2022999
+
 
 	bool running = true;
 	int mainMenuChoice = 0, customerMaintenanceMenuChoice = 0;
@@ -54,6 +65,7 @@ int main(int argc, char* argv[]) {
 			break;
 
 		case 8:
+			return 0;
 			break;
 
 		default:
