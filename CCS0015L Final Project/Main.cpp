@@ -2,7 +2,6 @@
 #include "Video.h"
 #include "Customer Rent.h"
 #include "Customer.h"
-#include <string>
 
 using namespace std;
 

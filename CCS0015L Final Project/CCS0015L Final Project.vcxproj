@@ -132,8 +132,12 @@
     <ClInclude Include="Video.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Customer Implementation.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Video_implementation.cpp" />
+    <ClCompile Include="Video Implementation.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Customer Rent Implementation.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
