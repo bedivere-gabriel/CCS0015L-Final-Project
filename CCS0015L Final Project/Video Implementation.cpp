@@ -2,8 +2,12 @@
 #include "Video.h"
 #include <string>
 #include <iomanip>
+#include <cstdlib>
+
 
 using namespace std; 
+
+int rand();
 
 VideoDataStructure::VideoDataStructure()
 {
