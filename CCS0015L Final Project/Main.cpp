@@ -54,6 +54,7 @@ int main(int argc, char* argv[]) {
 			break;
 
 		case 8:
+			return 0;
 			break;
 
 		default:
