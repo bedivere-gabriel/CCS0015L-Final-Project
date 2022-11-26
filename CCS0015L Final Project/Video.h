@@ -16,8 +16,8 @@ public:
 		head = NULL;
 	}
 	void insertVideo(int id, std::string title, std::string genre, std::string production, std::string filename, int copies);
-	void rentVideo();
-	void returnVideo();
+	void rentVideo(int id, int copies);
+	void returnVideo(int id);
 	void showVideoDetails();
 	void displayAllVideos();
 	int generateID();
