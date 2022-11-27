@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 
+
 class CustomerDataStructure {
 protected:
 	struct node {
@@ -15,7 +16,7 @@ public:
 	CustomerDataStructure() {
 		head = NULL;
 	}
-	void addCustomer();
+	void addCustomer(int _id, std::string _name, std::string _address);
 	void showCustomerDetails();
 	void displayAllCustomer();
 	int generateID();

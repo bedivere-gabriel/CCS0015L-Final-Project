@@ -54,6 +54,33 @@ void VideoDataStructure::rentVideo(int id, int copies){
 
 }
 
-void VideoDataStructure::returnVideo(int id){
+void VideoDataStructure::returnVideo(int id, std::string title, std::string genre, std::string production, std::string filename, int copies){
 
+}
+
+void VideoDataStructure::displayAllVideos(int id)
+{
+	struct node* nodePtr; 
+
+	if (head == NULL)
+	{
+		cout << "The List is Empty" << endl; 
+	}
+	else
+	{
+		nodePtr = head;
+		while (nodePtr)
+		{
+			if (nodePtr->_id == id)
+			{
+				cout << "Video ID: "; cout << nodePtr->_id; cout << endl; 
+				cout << "Title: "; cout << nodePtr->_filename; cout << endl;
+				cout << "Production: "; cout << nodePtr->_production; cout << endl;
+				cout << "Genre: "; cout << nodePtr->_genre; cout << endl; 
+				cout << "Copies in stock: " << nodePtr->_copies; cout << endl; 
+				cout << "Filename: " << nodePtr->_filename; cout << endl; 
+			}
+			nodePtr = nodePtr->next;
+		}
+	}
 }
