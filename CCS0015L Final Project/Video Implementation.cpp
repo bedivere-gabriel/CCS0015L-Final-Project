@@ -50,7 +50,7 @@ void VideoDataStructure::insertVideo(int id, string title, string genre, string 
 	cout << "Video insertion is successful" << endl;
 }
 
-void VideoDataStructure::rentVideo(int id, int copies){
+void VideoDataStructure::rentVideo(int id){
 	node* nodePtr;
 	nodePtr = head;
 
@@ -62,14 +62,13 @@ void VideoDataStructure::rentVideo(int id, int copies){
 		while (nodePtr->next) {
 			if (nodePtr->_id == id) {
 				nodePtr->_copies--;
-				copies--;
 			}
 			nodePtr->next;
 		}
 	}
 }
 
-void VideoDataStructure::returnVideo(int id, int copies){
+void VideoDataStructure::returnVideo(int id){
 	node* nodePtr;
 	nodePtr = head;
 
@@ -81,7 +80,6 @@ void VideoDataStructure::returnVideo(int id, int copies){
 		while (nodePtr->next) {
 			if (nodePtr->_id == id) {
 				nodePtr->_copies++;
-				copies++;
 			}
 			nodePtr->next;
 		}
