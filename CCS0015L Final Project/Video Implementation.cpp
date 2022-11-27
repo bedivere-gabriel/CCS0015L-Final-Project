@@ -51,39 +51,9 @@ void VideoDataStructure::insertVideo(int id, string title, string genre, string 
 }
 
 void VideoDataStructure::rentVideo(int id, int copies){
-	node* nodePtr;
-	nodePtr = head;
 
-	if (!head) {
-		cout << "Empty list" << endl;
-	}
-
-	else {
-		while (nodePtr->next) {
-			if (nodePtr->_id == id) {
-				nodePtr->_copies--;
-				copies--;
-			}
-			nodePtr->next;
-		}
-	}
 }
 
-void VideoDataStructure::returnVideo(int id, int copies){
-	node* nodePtr;
-	nodePtr = head;
+void VideoDataStructure::returnVideo(int id){
 
-	if (!head) {
-		cout << "Empty list" << endl;
-	}
-
-	else {
-		while (nodePtr->next) {
-			if (nodePtr->_id == id) {
-				nodePtr->_copies++;
-				copies++;
-			}
-			nodePtr->next;
-		}
-	}
 }
