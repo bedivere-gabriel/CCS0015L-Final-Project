@@ -90,7 +90,7 @@ void VideoDataStructure::returnVideo(int id, int copies){
 
 void VideoDataStructure::displayAllVideos(int id)
 {
-	struct node* nodePtr; 
+	node* nodePtr; 
 
 	if (head == NULL)
 	{
