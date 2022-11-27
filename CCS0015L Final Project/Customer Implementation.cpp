@@ -1,6 +1,12 @@
 #include <iostream>
 #include "Customer.h"
 
+
+void addCustomer()
+{
+
+}
+
 bool CustomerDataStructure::checkCustomerID(int ID) {
 	bool found = false;
 
