@@ -54,7 +54,7 @@ void VideoDataStructure::rentVideo(int id, int copies){
 
 }
 
-void VideoDataStructure::returnVideo(int id){
+void VideoDataStructure::returnVideo(int id, std::string title, std::string genre, std::string production, std::string filename, int copies){
 
 }
 

@@ -1,9 +1,21 @@
 #include <iostream>
 #include "Customer.h"
+#include <string>
+#include <iomanip>
+#include <cstdlib>
 
+using namespace std; 
 
-void addCustomer()
+CustomerDataStructure::CustomerDataStructure()
 {
+	if (head != NULL);
+}
+
+void addCustomer(int _id, string _name, string _address)
+{
+	
+
+
 
 }
 
