@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
 	//20220003 ... 2022999
 
 
-	bool running = true;
+	/*bool running = true;
 	int mainMenuChoice = 0, customerMaintenanceMenuChoice = 0;
 
 	while (running) {
@@ -74,7 +74,13 @@ int main(int argc, char* argv[]) {
 		default:
 			break;
 		}
-	}
+	}*/
+	VideoDataStructure obj;
+	obj.insertVideo(123, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
+	obj.insertVideo(124, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
+	obj.insertVideo(125, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
+	obj.insertVideo(126, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
+	obj.insertVideo(127, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
 }
 
 void mainMenu() {
