@@ -19,7 +19,7 @@ public:
 	void rentVideo(int id, int copies);
 	void returnVideo(int id, int copies);
 	void showVideoDetails();
-	void displayAllVideos(int _id); //traversal
+	void displayAllVideos(); //traversal
 	int generateID();
 	bool checkVideo();
 };

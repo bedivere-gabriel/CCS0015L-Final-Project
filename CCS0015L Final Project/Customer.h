@@ -13,9 +13,7 @@ protected:
 	};
 	node* head;
 public:
-	CustomerDataStructure() {
-		head = NULL;
-	}
+	CustomerDataStructure();
 	void addCustomer(int _id, std::string _name, std::string _address);
 	void showCustomerDetails();
 	void displayAllCustomer();

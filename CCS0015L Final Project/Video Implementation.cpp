@@ -88,7 +88,7 @@ void VideoDataStructure::returnVideo(int id, int copies){
 	}
 }
 
-void VideoDataStructure::displayAllVideos(int id)
+void VideoDataStructure::displayAllVideos()
 {
 	node* nodePtr; 
 

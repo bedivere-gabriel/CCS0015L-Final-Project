@@ -8,7 +8,7 @@ using namespace std;
 
 CustomerDataStructure::CustomerDataStructure()
 {
-	if (head != NULL);
+	head = NULL;
 }
 
 void addCustomer(int _id, string _name, string _address)
