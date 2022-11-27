@@ -13,7 +13,7 @@ VideoDataStructure::VideoDataStructure()
 
 void VideoDataStructure::insertVideo(int id, string title, string genre, string production, string filename, int copies)
 {
-	struct node* newNode, * nodePtr, * previousNode;
+	node* newNode, * nodePtr, * previousNode;
 	newNode = new struct node;
 	newNode->_id = id;
 	newNode->_copies = copies;
