@@ -8,7 +8,7 @@ using namespace std;
 
 VideoDataStructure::VideoDataStructure()
 {
-	if (head != NULL);
+	head = NULL;
 }
 
 void VideoDataStructure::insertVideo(int id, string title, string genre, string production, string filename, int copies)
@@ -16,21 +16,20 @@ void VideoDataStructure::insertVideo(int id, string title, string genre, string 
 	node* newNode, * nodePtr, * previousNode;
 	newNode = new struct node;
 	newNode->_id = id;
-	newNode->_copies = copies;
 	newNode->_title = title;
-	newNode->_genre = genre; 
 	newNode->_production = production;
+	newNode->_genre = genre; 
+	newNode->_copies = copies;
 	newNode->_filename = filename;
+	newNode->next = NULL;
 
-	if (head)
+	if (head == NULL)
 	{
 		head = newNode;
-		newNode->next = NULL;
 	}
 	else
 	{
 		nodePtr = head;
-		previousNode = NULL;
 		while (nodePtr != NULL && nodePtr->_id < id)
 		{
 			previousNode = nodePtr;
