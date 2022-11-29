@@ -10,7 +10,7 @@ using namespace std;
 
 void VideoDataStructure::insertVideo(int id, string title, string genre, string production, string filename, int copies)
 {
-	node* newNode, * nodePtr, * previousNode;
+	node* newNode, * nodePtr;
 	newNode = new struct node;
 	newNode->_id = id;
 	newNode->_title = title;
