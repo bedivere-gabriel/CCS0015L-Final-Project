@@ -13,13 +13,13 @@ void customerMaintenanceMenu();
 
 int main(int argc, char* argv[]) {
 
-	//VideoDataStructure videoObj;
+	VideoDataStructure videoObj;
 
-	//CustomerDataStructure customerObj;
+	CustomerDataStructure customerObj;
 
-	//customerObj.addCustomer(x, "John", "Bulacan");
-	//customerObj.addCustomer(x, "Gab", "Manila");
-	//customerObj.addCustomer(x, "Harv", "Manila Bay");
+	customerObj.addCustomer(20220001, "John", "Bulacan");
+	customerObj.addCustomer(20220001, "Gab", "Manila");
+	customerObj.addCustomer(20220001, "Harv", "Manila Bay");
 	//
 	//20220003 ... 2022999
 
