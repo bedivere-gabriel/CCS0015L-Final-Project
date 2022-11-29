@@ -49,7 +49,7 @@ bool VideoDataStructure::checkVideo(int _id) {
 		nodePtr = head; 
 		while (nodePtr) {
 
-			if (nodePtr->_id == _id) {
+			if (nodePtr->_id == _id) { //note == is comparative oprs
 				found = true;
 				break;
 			}
