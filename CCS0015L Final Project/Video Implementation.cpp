@@ -43,7 +43,7 @@ bool VideoDataStructure::checkVideo(int _id) {
 	node* nodePtr; 
 
 	if (!head) { 
-		cout << " Video already exist!" << endl;
+		cout << " List is empty" << endl;
 	}
 	else {
 		nodePtr = head; 
