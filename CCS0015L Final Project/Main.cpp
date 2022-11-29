@@ -75,14 +75,14 @@ int main(int argc, char* argv[]) {
 			break;
 		}
 	}*/
-	VideoDataStructure obj;
+	/*VideoDataStructure obj;
 	obj.insertVideo(123, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
 	obj.insertVideo(124, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
 	obj.insertVideo(125, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
 	obj.insertVideo(126, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
 	obj.insertVideo(127, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
 	obj.displayAllVideos();
-	cout << obj.checkVideo(128);
+	cout << obj.checkVideo(128);*/
 }
 
 	
