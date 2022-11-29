@@ -16,7 +16,7 @@ void CustomerDataStructure::addCustomer(int _id, string _name, string _address)
 	node* newNode, *nodePtr;
 
 	newNode = new struct node; //side note: idk why its showing video parameters instead of customers.
-	newNode->_id = _id; 
+	newNode->_id = _id;  // i think its cos the display function hasnt been put up yet
 	newNode->_name = _name;
 	newNode->_address = _address;
 	newNode->next = NULL;
