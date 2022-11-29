@@ -51,9 +51,9 @@ bool VideoDataStructure::checkVideo(int _id) {
 
 			if (nodePtr->_id == _id) {
 				found = true;
-
-				nodePtr = nodePtr->next;
+				break;
 			}
+			nodePtr = nodePtr->next;
 		}
 	}
 	return found;
