@@ -82,6 +82,7 @@ int main(int argc, char* argv[]) {
 	obj.insertVideo(126, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
 	obj.insertVideo(127, "HP", "dsgha", "hsadhas", "hjgdsh.png", 5);
 	obj.displayAllVideos();
+	cout << obj.checkVideo(128);
 }
 
 	
