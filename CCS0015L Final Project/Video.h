@@ -21,5 +21,5 @@ public:
 	void showVideoDetails();
 	void displayAllVideos(); //traversal
 	int generateID();
-	bool checkVideo();
+	bool checkVideo(int _id);
 };

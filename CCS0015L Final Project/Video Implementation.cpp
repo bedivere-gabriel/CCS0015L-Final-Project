@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <cstdlib>
 
+
 using namespace std; 
 
 VideoDataStructure::VideoDataStructure()
@@ -29,24 +30,37 @@ void VideoDataStructure::insertVideo(int id, string title, string genre, string 
 	}
 	else
 	{
-		nodePtr = head;
-		while (nodePtr != NULL && nodePtr->_id < id)
-		{
-			previousNode = nodePtr;
+		nodePtr = head; 
+		while (nodePtr->next) {
 			nodePtr = nodePtr->next;
 		}
-		if (previousNode == NULL)
-		{
-			head = newNode;
-			newNode->next = nodePtr; 
-		}
-		else
-		{
-			previousNode->next = newNode;
-			newNode->next = nodePtr;
-		}
+
+		nodePtr->next = newNode;
+		
 	}
 	cout << "Video insertion is successful" << endl;
+}
+
+bool VideoDataStructure::checkVideo(int _id) {
+	bool found = false; 
+
+	node* nodePtr; 
+
+	if (!head) {
+		cout << " Video already exist!" << endl;
+	}
+	else {
+		nodePtr = head; 
+		while (nodePtr) {
+
+			if (nodePtr->_id = _id) {
+				found = true;
+
+				nodePtr = nodePtr->next;
+			}
+		}
+	}
+	return found;
 }
 
 void VideoDataStructure::rentVideo(int id){
