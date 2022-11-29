@@ -7,10 +7,6 @@
 
 using namespace std; 
 
-VideoDataStructure::VideoDataStructure()
-{
-	head = NULL;
-}
 
 void VideoDataStructure::insertVideo(int id, string title, string genre, string production, string filename, int copies)
 {
@@ -46,7 +42,7 @@ bool VideoDataStructure::checkVideo(int _id) {
 
 	node* nodePtr; 
 
-	if (!head) {
+	if (!head) { 
 		cout << " Video already exist!" << endl;
 	}
 	else {
