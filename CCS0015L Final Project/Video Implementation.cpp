@@ -112,15 +112,12 @@ void VideoDataStructure::displayAllVideos()
 		nodePtr = head;
 		while (nodePtr)
 		{
-			if (nodePtr->_id == id)
-			{
 				cout << "Video ID: "; cout << nodePtr->_id; cout << endl; 
 				cout << "Title: "; cout << nodePtr->_filename; cout << endl;
 				cout << "Production: "; cout << nodePtr->_production; cout << endl;
 				cout << "Genre: "; cout << nodePtr->_genre; cout << endl; 
 				cout << "Copies in stock: " << nodePtr->_copies; cout << endl; 
 				cout << "Filename: " << nodePtr->_filename; cout << endl; 
-			}
 			nodePtr = nodePtr->next;
 		}
 	}
