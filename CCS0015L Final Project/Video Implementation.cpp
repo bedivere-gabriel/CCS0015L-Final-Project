@@ -61,13 +61,13 @@ bool VideoDataStructure::checkVideo(int _id) {
 
 void VideoDataStructure::rentVideo(int id){
 	node* nodePtr;
-	nodePtr = head;
 
 	if (!head) {
 		cout << "Empty list" << endl;
 	}
 
 	else {
+		nodePtr = head;
 		while (nodePtr->next) {
 			if (nodePtr->_id == id) {
 				nodePtr->_copies--;
@@ -79,16 +79,18 @@ void VideoDataStructure::rentVideo(int id){
 
 void VideoDataStructure::returnVideo(int id){
 	node* nodePtr;
-	nodePtr = head;
 
 	if (!head) {
 		cout << "Empty list" << endl;
 	}
 
 	else {
-		while (nodePtr->next) {
-			if (nodePtr->_id == id) {
-				nodePtr->_copies++;
+		nodePtr = head;
+		if (nodePtr->_copies < 10) {
+			while (nodePtr->next) {
+				if (nodePtr->_id == id) {
+					nodePtr->_copies++;
+				}
 			}
 			nodePtr->next;
 		}

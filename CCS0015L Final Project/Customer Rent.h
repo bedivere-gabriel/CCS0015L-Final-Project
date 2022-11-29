@@ -17,7 +17,7 @@ public:
 	CustomerRentDataStructure() {
 		head = NULL;
 	}
-	void rentVideo(int customer_id, int *video_id);
-	void returnVideo(int customer_id, int *video_id);
+	void rentVideo(int customer_id, int video_id[]);
+	void returnVideo(int customer_id, int video_id[]);
 	void showRentedVideoList(int customer_id);
 };

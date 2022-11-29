@@ -4,14 +4,14 @@
 
 using namespace std;
 
-void CustomerRentDataStructure::rentVideo(int customer_id, int *video_id) {
+void CustomerRentDataStructure::rentVideo(int customer_id, int video_id[]) {
+	//add to video id
 	Node* nodePtr, * newNode;
 	bool found = false;
-	int rentedVids = 0;
 
 	nodePtr = head;
 
-	for (int x = 0; x < 10; x++) {
+	for (int x = 0; x < 10; x++) { //when customer id is found
 		if (nodePtr->_id == customer_id) {
 			found = true;
 			break;
@@ -19,19 +19,10 @@ void CustomerRentDataStructure::rentVideo(int customer_id, int *video_id) {
 		nodePtr = nodePtr->next;
 	}
 
-	if (found) {
+	if (found) { //if customer id not found
 		for (int x = 0; x < 10; x++) {
 			if (nodePtr->_videoID[x] != 0) {
-				rentedVids++;
-			}
-		}
-
-		if (rentedVids < 10) {
-			for (int x = 0; x < 10; x++) {
-				if (nodePtr->_videoID[x] == 0) {
-					nodePtr->_videoID[x] = *video_id;
-					break;
-				}
+				nodePtr->_videoID[x]++;
 			}
 		}
 	}
@@ -39,7 +30,7 @@ void CustomerRentDataStructure::rentVideo(int customer_id, int *video_id) {
 	else {
 		newNode = new Node;
 		newNode->_id = customer_id;
-		newNode->_videoID[10] = *video_id;
+		newNode->_videoID[9] = video_id[10];
 		newNode->next = NULL;
 
 		nodePtr = head;
@@ -48,84 +39,24 @@ void CustomerRentDataStructure::rentVideo(int customer_id, int *video_id) {
 			nodePtr = nodePtr->next;
 		}
 		nodePtr = newNode;
-
-		for (int x = 0; x < 10; x++) {
-			if (nodePtr->_videoID[x] != 0) {
-				rentedVids++;
-			}
-		}
-
-		if (rentedVids < 10) {
-			for (int x = 0; x < 10; x++) {
-				if (nodePtr->_videoID[x] == 0) {
-					nodePtr->_videoID[x] = *video_id;
-					break;
-				}
-			}
-		}
 	}
 }
 
 
-void CustomerRentDataStructure::returnVideo(int customer_id, int *video_id) {
-	Node* nodePtr, * newNode;
+void CustomerRentDataStructure::returnVideo(int customer_id, int video_id[]) {
+	//remove video id from list
+	Node* nodePtr;
 	bool found = false;
-	int returnedVids = 0;
 
 	nodePtr = head;
 
 	for (int x = 0; x < 10; x++) {
 		if (nodePtr->_id == customer_id) {
 			found = true;
+			nodePtr->_videoID[x]--;
 			break;
 		}
 		nodePtr = nodePtr->next;
-	}
-
-	if (found) {
-		for (int x = 0; x < 10; x++) {
-			if (nodePtr->_videoID[x] != 0) {
-				returnedVids--;
-			}
-		}
-
-		if (returnedVids < 10) {
-			for (int x = 0; x < 10; x++) {
-				if (nodePtr->_videoID[x] == 0) {
-					nodePtr->_videoID[x] = *video_id;
-					break;
-				}
-			}
-		}
-	}
-
-	else {
-		newNode = new Node;
-		newNode->_id = customer_id;
-		newNode->_videoID[10] = *video_id;
-		newNode->next = NULL;
-
-		nodePtr = head;
-
-		while (nodePtr) {
-			nodePtr = nodePtr->next;
-		}
-		nodePtr = newNode;
-
-		for (int x = 0; x < 10; x++) {
-			if (nodePtr->_videoID[x] != 0) {
-				returnedVids--;
-			}
-		}
-
-		if (returnedVids < 10) {
-			for (int x = 0; x < 10; x++) {
-				if (nodePtr->_videoID[x] == 0) {
-					nodePtr->_videoID[x] = *video_id;
-					break;
-				}
-			}
-		}
 	}
 }
 
@@ -133,19 +64,19 @@ void CustomerRentDataStructure::returnVideo(int customer_id, int *video_id) {
 
 void CustomerRentDataStructure::showRentedVideoList(int customer_id) {
 	Node* nodePtr;
+	nodePtr = head;
 
 	if (head == NULL) {
 		cout << "Empty list" << endl;
 	}
 
 	else {
-		nodePtr = head;
-		while (nodePtr) {
-			if (nodePtr->_id = customer_id) {
-				cout << nodePtr->_videoID;
+		cout << nodePtr->_id << endl;
+
+		for (int x = 0; x < 10; x++) {
+			if (nodePtr->_videoID[x] != 0) {
+				cout << nodePtr->_videoID[x] << endl;
 			}
-			nodePtr->next;
 		}
 	}
-	//not sure yet here lmao
 }
