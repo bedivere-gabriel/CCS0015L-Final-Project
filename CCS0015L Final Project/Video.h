@@ -12,7 +12,9 @@ protected:
 	};
 	node* head;
 public:
-	VideoDataStructure();
+	VideoDataStructure() {
+		head = NULL;
+	}
 	void insertVideo(int id, std::string title, std::string genre, std::string production, std::string filename, int copies);
 	void rentVideo(int id, int copies);
 	void returnVideo(int id, int copies);
