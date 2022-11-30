@@ -71,6 +71,7 @@ void VideoDataStructure::rentVideo(int id){
 		while (nodePtr) {
 			if (nodePtr->_id == id) {
 				nodePtr->_copies--;
+				cout << nodePtr->_copies;
 			}
 			nodePtr->next;
 		}
@@ -90,6 +91,7 @@ void VideoDataStructure::returnVideo(int id){
 		while (nodePtr) {
 			if (nodePtr->_id == id) {
 				nodePtr->_copies++;
+				cout << nodePtr->_copies;
 			}
 			nodePtr->next;
 		}
