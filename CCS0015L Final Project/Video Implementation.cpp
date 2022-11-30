@@ -11,7 +11,8 @@ using namespace std;
 void VideoDataStructure::insertVideo(int id, string title, string genre, string production, string filename, int copies)
 {
 	node* newNode, * nodePtr;
-	newNode = new struct node;
+
+	newNode = new node;
 	newNode->_id = id;
 	newNode->_title = title;
 	newNode->_production = production;
@@ -20,7 +21,7 @@ void VideoDataStructure::insertVideo(int id, string title, string genre, string 
 	newNode->_filename = filename;
 	newNode->next = NULL;
 
-	if (head == NULL)
+	if (!head)
 	{
 		head = newNode;
 	}
@@ -49,7 +50,7 @@ bool VideoDataStructure::checkVideo(int _id) {
 		nodePtr = head; 
 		while (nodePtr) {
 
-			if (nodePtr->_id == _id) { //note == is comparative oprs
+			if (nodePtr->_id == _id) {
 				found = true;
 				break;
 			}
@@ -65,12 +66,12 @@ void VideoDataStructure::rentVideo(int id){
 	if (!head) {
 		cout << "Empty list" << endl;
 	}
-
 	else {
 		nodePtr = head;
 		while (nodePtr) {
 			if (nodePtr->_id == id) {
 				nodePtr->_copies--;
+				break;
 			}
 			nodePtr->next;
 		}
@@ -90,6 +91,7 @@ void VideoDataStructure::returnVideo(int id){
 		while (nodePtr) {
 			if (nodePtr->_id == id) {
 				nodePtr->_copies++;
+				break;
 			}
 			nodePtr->next;
 		}
@@ -99,22 +101,31 @@ void VideoDataStructure::returnVideo(int id){
 void VideoDataStructure::displayAllVideos()
 {
 	node* nodePtr; 
+	char block = 254;
 
-	if (head == NULL)
+	if (!head)
 	{
 		cout << "The List is Empty" << endl; 
 	}
 	else
 	{
 		nodePtr = head;
+
 		while (nodePtr)
 		{
-				cout << "Video ID: "; cout << nodePtr->_id; cout << endl; 
-				cout << "Title: "; cout << nodePtr->_filename; cout << endl;
-				cout << "Production: "; cout << nodePtr->_production; cout << endl;
-				cout << "Genre: "; cout << nodePtr->_genre; cout << endl; 
-				cout << "Copies in stock: " << nodePtr->_copies; cout << endl; 
-				cout << "Filename: " << nodePtr->_filename; cout << endl; 
+			for (int x = 0; x < 40; x++)
+				cout << block;
+			cout << endl;
+			cout << "Video ID: " << nodePtr->_id << endl; 
+			cout << "Title: " << nodePtr->_title << endl;
+			cout << "Production: " << nodePtr->_production << endl;
+			cout << "Genre: " << nodePtr->_genre << endl; 
+			cout << "Copies in stock: " << nodePtr->_copies << endl; 
+			cout << "Filename: " << nodePtr->_filename << endl; 
+			for (int x = 0; x < 40; x++)
+				cout << block;
+			cout << endl;
+
 			nodePtr = nodePtr->next;
 		}
 	}

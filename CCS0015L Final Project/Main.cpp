@@ -13,7 +13,24 @@ void customerMaintenanceMenu();
 
 int main(int argc, char* argv[]) {
 
-	//VideoDataStructure videoObj;
+	
+	VideoDataStructure videoObj;
+
+	videoObj.insertVideo(123, "harry potter", "science fiction", "warner brothers", "hp.jpeg", 10);
+	videoObj.insertVideo(124, "star wars", "science fiction", "lucas films", "sw.jpeg", 11);
+	videoObj.insertVideo(125, "fairly odd parents", "cartoon", "nickelodeon", "fairly.jpeg", 12);
+	videoObj.insertVideo(126, "amazing world of gumball", "cartoon", "cartoon network", "awg.jpeg", 13);
+	videoObj.insertVideo(127, "phineas and ferb", "cartoon", "disney", "pf.jpeg", 14);
+	videoObj.displayAllVideos();
+	system("pause>0");
+	system("cls");
+	videoObj.rentVideo(123);
+	videoObj.displayAllVideos();
+	system("pause>0");
+	system("cls");
+	videoObj.returnVideo(123);
+	videoObj.displayAllVideos();
+	system("pause>0");
 
 	//CustomerDataStructure customerObj;
 

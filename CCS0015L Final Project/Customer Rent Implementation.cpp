@@ -4,12 +4,33 @@
 
 using namespace std;
 
-void CustomerRentDataStructure::rentVideo(int customer_id, int *video_id) {
-	//add to video id
+void CustomerRentDataStructure::rentVideo(int customer_id, int video_id) {
 	Node* nodePtr, * newNode;
+	int counter = 0;
 	bool found = false;
 
-	nodePtr = head;
+	if (!head) {
+		newNode = new Node;
+		newNode->_id = customer_id;
+		newNode->next = NULL;
+		head = newNode;
+	}
+	else {
+		nodePtr = head;
+
+		while (nodePtr) {
+			if (nodePtr->_id == customer_id) {
+
+			}
+		}
+	}
+
+
+
+
+
+
+
 
 	for (int x = 0; x < 10; x++) { //when customer id is found
 		if (nodePtr->_id == customer_id) {
@@ -28,7 +49,7 @@ void CustomerRentDataStructure::rentVideo(int customer_id, int *video_id) {
 			if (nodePtr->_videoID[x] < 10) {
 				for (int n = 0; x < 10; x++) {
 					if (nodePtr->_videoID[n] == 0) {
-						nodePtr->_videoID[n] = *video_id;
+						nodePtr->_videoID[n] = video_id;
 						break;
 					}
 				}
@@ -39,16 +60,6 @@ void CustomerRentDataStructure::rentVideo(int customer_id, int *video_id) {
 	else { //if customer id not found
 		newNode = new Node;
 		newNode->_id = customer_id;
-		newNode->_videoID[0] = video_id[0];
-		newNode->_videoID[1] = video_id[1];
-		newNode->_videoID[2] = video_id[2];
-		newNode->_videoID[3] = video_id[3];
-		newNode->_videoID[4] = video_id[4];
-		newNode->_videoID[5] = video_id[5];
-		newNode->_videoID[6] = video_id[6];
-		newNode->_videoID[7] = video_id[7];
-		newNode->_videoID[8] = video_id[8];
-		newNode->_videoID[9] = video_id[9];
 		newNode->next = NULL;
 
 		nodePtr = head;
@@ -77,7 +88,7 @@ void CustomerRentDataStructure::rentVideo(int customer_id, int *video_id) {
 }
 
 
-void CustomerRentDataStructure::returnVideo(int customer_id, int *video_id) {
+void CustomerRentDataStructure::returnVideo(int customer_id, int video_id) {
 	//remove video id from list
 	Node* nodePtr;
 	bool found = false;
