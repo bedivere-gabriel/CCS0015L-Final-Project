@@ -4,84 +4,92 @@
 #include <iomanip>
 #include <cstdlib>
 
+
 using namespace std; 
 
-VideoDataStructure::VideoDataStructure()
-{
-	if (head != NULL);
-}
 
 void VideoDataStructure::insertVideo(int id, string title, string genre, string production, string filename, int copies)
 {
-	node* newNode, * nodePtr, * previousNode;
+	node* newNode, * nodePtr;
 	newNode = new struct node;
 	newNode->_id = id;
-	newNode->_copies = copies;
 	newNode->_title = title;
-	newNode->_genre = genre; 
 	newNode->_production = production;
+	newNode->_genre = genre; 
+	newNode->_copies = copies;
 	newNode->_filename = filename;
+	newNode->next = NULL;
 
-	if (head)
+	if (head == NULL)
 	{
 		head = newNode;
-		newNode->next = NULL;
 	}
 	else
 	{
-		nodePtr = head;
-		previousNode = NULL;
-		while (nodePtr != NULL && nodePtr->_id < id)
-		{
-			previousNode = nodePtr;
+		nodePtr = head; 
+		while (nodePtr->next) {
 			nodePtr = nodePtr->next;
 		}
-		if (previousNode == NULL)
-		{
-			head = newNode;
-			newNode->next = nodePtr; 
-		}
-		else
-		{
-			previousNode->next = newNode;
-			newNode->next = nodePtr;
-		}
+
+		nodePtr->next = newNode;
+		
 	}
 	cout << "Video insertion is successful" << endl;
 }
 
-void VideoDataStructure::rentVideo(int id, int copies){
+bool VideoDataStructure::checkVideo(int _id) {
+	bool found = false; 
+
+	node* nodePtr; 
+
+	if (!head) { 
+		cout << " List is empty" << endl;
+	}
+	else {
+		nodePtr = head; 
+		while (nodePtr) {
+
+			if (nodePtr->_id == _id) { //note == is comparative oprs
+				found = true;
+				break;
+			}
+			nodePtr = nodePtr->next;
+		}
+	}
+	return found;
+}
+
+void VideoDataStructure::rentVideo(int id){
 	node* nodePtr;
-	nodePtr = head;
 
 	if (!head) {
 		cout << "Empty list" << endl;
 	}
 
 	else {
-		while (nodePtr->next) {
+		nodePtr = head;
+		while (nodePtr) {
 			if (nodePtr->_id == id) {
 				nodePtr->_copies--;
-				copies--;
 			}
 			nodePtr->next;
 		}
 	}
 }
 
-void VideoDataStructure::returnVideo(int id, int copies){
+void VideoDataStructure::returnVideo(int id){
 	node* nodePtr;
-	nodePtr = head;
 
 	if (!head) {
 		cout << "Empty list" << endl;
 	}
 
 	else {
-		while (nodePtr->next) {
+		nodePtr = head;
+		
+		while (nodePtr) {
 			if (nodePtr->_id == id) {
 				nodePtr->_copies++;
-				copies++;
 			}
 			nodePtr->next;
 		}
@@ -101,15 +109,12 @@ void VideoDataStructure::displayAllVideos()
 		nodePtr = head;
 		while (nodePtr)
 		{
-			if (nodePtr->_id == id)
-			{
 				cout << "Video ID: "; cout << nodePtr->_id; cout << endl; 
 				cout << "Title: "; cout << nodePtr->_filename; cout << endl;
 				cout << "Production: "; cout << nodePtr->_production; cout << endl;
 				cout << "Genre: "; cout << nodePtr->_genre; cout << endl; 
 				cout << "Copies in stock: " << nodePtr->_copies; cout << endl; 
 				cout << "Filename: " << nodePtr->_filename; cout << endl; 
-			}
 			nodePtr = nodePtr->next;
 		}
 	}

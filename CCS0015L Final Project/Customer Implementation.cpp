@@ -11,10 +11,27 @@ CustomerDataStructure::CustomerDataStructure()
 	head = NULL;
 }
 
-void addCustomer(int _id, string _name, string _address)
+void CustomerDataStructure::addCustomer(int _id, string _name, string _address)
 {
-	
+	node* newNode, *nodePtr;
 
+	newNode = new struct node; //side note: idk why its showing video parameters instead of customers.
+	newNode->_id = _id;  
+	newNode->_name = _name;
+	newNode->_address = _address;
+	newNode->next = NULL;
+
+	if (head == NULL) {
+		head = newNode;
+	}
+	else {
+		nodePtr = head; 
+		while (nodePtr->next) {
+			nodePtr = nodePtr->next;
+		}
+
+		nodePtr->next = newNode; 
+	}
 
 
 }
